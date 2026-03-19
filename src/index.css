@@ -1,0 +1,49 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:       #101010;
+  --grey1:       #191919;
+  --grey2:       #323232;
+  --grey3:       #333333;
+  --grey4:       #474747;
+  --grey5:       #525252;
+  --grey6:       #535353;
+  --tag-border:  #cfcfcf;
+  --card-purple: #f0f1fa;
+  --card-blue:   #f0f6fa;
+  --card-green:  #f0faf8;
+}
+
+/* Locomotive / Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+html { scroll-behavior: auto; }
+
+body {
+  font-family: 'Geist', 'Inter', sans-serif;
+  background: #fff;
+  color: var(--black);
+  overflow-x: hidden;
+}
+
+/* ── Global mobile baseline ── */
+@media (max-width: 768px) {
+  img {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,25 @@
+.tag {
+  border: 1px solid var(--tag-border);
+  border-radius: 100px;
+  padding: 4px 12px;
+  font-family: 'Geist', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--grey4);
+  white-space: nowrap;
+}
+
+.sm { padding: 4px 8px; }
+
+/* ── Mobile: Figma 10px, 0.279px border, 4px×1px padding ── */
+@media (max-width: 768px) {
+  .tag,
+  .sm {
+    font-size: 10px;
+    border-width: 0.279px;
+    padding: 1px 6px;
+    border-radius: 28px;
+    white-space: nowrap;
+    text-align: center;
+  }
+}

@@ -1,0 +1,246 @@
+.work {
+  width: 100%;
+  padding: 40px 80px;
+  background: #fff;
+  scroll-margin-top: 90px;
+}
+
+.header { margin-bottom: 40px; }
+
+.sectionTitle {
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.469;
+  color: var(--black);
+}
+.sectionTitle strong { font-weight: 700; }
+
+.sectionSub {
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.469;
+  color: var(--black);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.row {
+  display: flex;
+  gap: 40px;
+}
+
+/* ── shared card ── */
+.card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.25s;
+}
+.card:hover { transform: scale(1.004); }
+
+.cardFull  { height: 557px; }
+.cardHalf  { flex: 1; height: 771px; }
+
+.details {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  bottom: 40px;          /* gives room for category to push to bottom */
+  right: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-family: 'Geist', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--grey3);
+  line-height: normal;
+}
+
+.desc {
+  font-family: 'Geist', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--grey4);
+  line-height: 1.6;
+  max-width: 100%;   /* inherits width from .details which is capped at 50% */
+}
+.desc strong { font-weight: 500; }
+.descNarrow  { max-width: 391px; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category {
+  font-family: 'Geist', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--grey4);
+  margin-top: auto;   /* push to bottom of .details flex column */
+}
+
+/* full-width card image: exact Figma coords x:721 y:186 w:870 h:741 */
+.imgFull {
+  position: absolute;
+  left: 721px;
+  top: 186px;
+  width: 870px;
+  height: 741px;
+  border-radius: 14px;
+  object-fit: cover;
+  object-position: left top;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+}
+
+/* half card image: absolutely placed per Figma coords */
+.imgHalf {
+  position: absolute;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .work {
+    padding: 40px 40px;
+  }
+
+  .sectionTitle {
+    font-size: 48px;
+  }
+
+  .cardFull {
+    height: 420px;
+  }
+
+  .cardHalf {
+    height: 580px;
+  }
+
+  .imgFull {
+    left: 480px;
+    top: 140px;
+    width: 660px;
+    height: 560px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .work {
+    padding: 40px 18px;    /* Figma: 18px side margin */
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  /* Figma: "Design with impact" 24px, "Recent work" 12px */
+  .sectionTitle { font-size: 24px; }
+  .sectionSub   { font-size: 12px; }
+
+  .cards { gap: 16px; }
+
+  /* All half-cards stack into a single column */
+  .row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Figma: every card is 400px tall, full width, border-radius ~6px */
+  .cardFull,
+  .cardHalf {
+    height: 400px;
+    flex: none;
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  /* Details: absolute, 11px from top/left/right, items centred */
+  .details {
+    left: 11px;
+    top: 11px;
+    right: 11px;
+    bottom: auto;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  /* Figma: title 18px, desc 12px */
+  .title { font-size: 18px; }
+
+  .desc,
+  .descNarrow {
+    font-size: 12px;
+    max-width: 100%;
+  }
+
+  /* Tags: centred flex-wrap, max 3 per row */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Figma: category 10px, no push-to-bottom on mobile */
+  .category {
+    margin-top: 0;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  /* ── Bchex full card image: Figma 298×254, top:208, centred ── */
+  .imgFull {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 208px;
+    width: 298px;
+    height: 254px;
+    border-radius: 4px;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  /* ── Half card images: centred absolute, sizes per Figma ── */
+  .imgHalf {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    border-radius: 4px !important;
+    margin: 0 !important;
+  }
+
+  /* Autilent: 317×211, top:208 */
+  .img_autilent {
+    top: 208px !important;
+    width: 317px !important;
+    height: 211px !important;
+  }
+
+  /* Xpendless: 170×279, top:200 */
+  .img_xpendless {
+    top: 200px !important;
+    width: 170px !important;
+    height: 279px !important;
+  }
+}

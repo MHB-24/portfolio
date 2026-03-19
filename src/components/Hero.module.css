@@ -1,0 +1,179 @@
+/* ── Base (desktop) ─────────────────────────────────────────── */
+.hero {
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  scroll-margin-top: 90px;
+
+  /* Two-column flex layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 120px 80px 0;
+  gap: 64px;
+}
+
+/* Text column — 65% of usable width (excluding padding) */
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1 1 0;
+}
+
+.title {
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 68px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.5px;
+  color: var(--black);
+}
+.title strong { font-weight: 700; }
+
+.subtitle {
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--black);
+}
+.subtitle strong { font-weight: 700; }
+
+/* Image column — fixed 494px wide */
+.photo {
+  flex: 0 0 494px;
+  width: 494px;
+  height: 627px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 32px;
+  pointer-events: none;
+}
+
+/* CTA buttons row */
+.ctaRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  background: #101010;
+  color: #fafafa;
+  border: none;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+.ctaPrimary:hover { opacity: 0.85; }
+
+.ctaOutline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 10px 24px;
+  background: transparent;
+  color: #101010;
+  border: 1px solid #101010;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.ctaOutline:hover { background: #101010; color: #fafafa; }
+.ctaOutline:hover svg path { stroke: #fafafa; }
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .hero {
+    height: auto;
+    min-height: 600px;
+    padding: 60px 40px;
+    gap: 60px;
+  }
+  .title   { font-size: 52px; }
+  .photo   { height: 520px; }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: unset;
+    padding: 80px 24px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    overflow: hidden;
+    margin-bottom: 24px;   /* 24px vertical gap before Work section */
+  }
+
+  /* Text group: title + subtitle stacked and centred */
+  .textGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .title {
+    position: static;
+    font-size: 30px;
+    width: auto;
+    max-width: 100%;
+    line-height: 1.469;
+    letter-spacing: 0;
+    text-align: center;
+  }
+
+  .subtitle {
+    position: static;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.469;
+    text-align: center;
+  }
+
+  /* CTA buttons: centred on mobile */
+  .ctaRow {
+    justify-content: center;
+  }
+  .ctaPrimary,
+  .ctaOutline {
+    font-size: 14px;
+    padding: 9px 20px;
+  }
+
+  /* Photo: full width, natural height */
+  .photo {
+    display: block;
+    position: static;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 32px;
+    left: auto;
+    right: auto;
+    top: auto;
+    flex-shrink: 0;
+    pointer-events: none;
+  }
+}

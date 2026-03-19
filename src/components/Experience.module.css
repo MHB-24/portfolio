@@ -1,0 +1,250 @@
+.section {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  background: #fff;
+  scroll-margin-top: 90px;
+}
+
+.title {
+  position: absolute;
+  left: 80px;
+  top: 2px;
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.469;
+  color: var(--black);
+}
+
+.company {
+  position: absolute;
+  left: 80px;
+  top: 136px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.companyName {
+  font-family: 'Geist', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.companyDur {
+  font-family: 'Geist', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--grey2);
+}
+
+.timeline {
+  position: absolute;
+  left: 80px;
+  top: 248px;
+  display: flex;
+  align-items: flex-start;
+  width: 617px;
+}
+
+.stepCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px 10px 10px;
+  width: 118px;
+  flex-shrink: 0;
+}
+
+.expList {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  flex: 1;
+}
+
+.expItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.role {
+  font-family: 'Geist', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--black);
+}
+
+.type {
+  font-family: 'Geist', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.dur {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Geist', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--grey2);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--grey2);
+  flex-shrink: 0;
+}
+
+.processLabel {
+  position: absolute;
+  left: 772px;
+  top: 195px;
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.469;
+  color: var(--black);
+}
+
+.processImg {
+  position: absolute;
+  left: 746px;
+  top: 240px;
+  width: 654px;
+  height: 347px;
+  object-fit: contain;
+}
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .section {
+    height: auto;
+    min-height: 700px;
+    padding-bottom: 60px;
+  }
+
+  .title {
+    font-size: 48px;
+    left: 40px;
+  }
+
+  .company {
+    left: 40px;
+  }
+
+  .timeline {
+    left: 40px;
+    width: auto;
+    right: 40px;
+  }
+
+  .processLabel {
+    left: 40px;
+    top: auto;
+    position: relative;
+    margin: 20px 0 8px;
+    padding-left: 40px;
+  }
+
+  .processImg {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 80px);
+    height: auto;
+    margin-left: 40px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .section {
+    height: auto;
+    min-height: unset;
+    padding: 40px 20px 60px;
+  }
+
+  .title {
+    position: static;
+    font-size: 36px;
+    display: block;
+    margin-bottom: 24px;
+  }
+
+  .company {
+    position: static;
+    margin-bottom: 24px;
+    gap: 14px;
+  }
+
+  .logo {
+    width: 72px;
+    height: 72px;
+  }
+
+  .companyName {
+    font-size: 22px;
+  }
+
+  .companyDur {
+    font-size: 18px;
+  }
+
+  .timeline {
+    position: static;
+    width: 100%;
+    gap: 0;
+  }
+
+  .stepCol {
+    width: 48px;
+    padding: 8px 12px 8px 4px;
+  }
+
+  .role {
+    font-size: 20px;
+  }
+
+  .type {
+    font-size: 18px;
+  }
+
+  .dur {
+    font-size: 16px;
+  }
+
+  .expList {
+    gap: 32px;
+  }
+
+  .processLabel {
+    position: static;
+    font-size: 16px;
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+
+  .processImg {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+}

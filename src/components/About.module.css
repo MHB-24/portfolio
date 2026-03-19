@@ -1,0 +1,77 @@
+.section {
+  position: relative;
+  width: 100%;
+  height: 800px;
+  background: #fff;
+  scroll-margin-top: 90px;
+}
+
+.title {
+  position: absolute;
+  left: 80px;
+  top: 30px;
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.469;
+  color: var(--black);
+}
+
+.desc {
+  position: absolute;
+  left: 80px;
+  top: 164px;
+  width: 761px;
+  font-family: 'Geist', sans-serif;
+  font-size: 60px;
+  font-weight: 300;
+  line-height: normal;
+  color: var(--black);
+}
+
+.desc strong { font-weight: 700; }
+
+/* ── Tablet ── */
+@media (max-width: 1024px) {
+  .section {
+    height: auto;
+    min-height: 500px;
+    padding-bottom: 60px;
+  }
+
+  .title {
+    font-size: 48px;
+    left: 40px;
+  }
+
+  .desc {
+    font-size: 40px;
+    left: 40px;
+    top: 140px;
+    width: auto;
+    right: 40px;
+  }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .section {
+    height: auto;
+    min-height: unset;
+    padding: 40px 20px 60px;
+  }
+
+  .title {
+    position: static;
+    font-size: 36px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .desc {
+    position: static;
+    font-size: 24px;
+    width: auto;
+    line-height: 1.5;
+  }
+}
