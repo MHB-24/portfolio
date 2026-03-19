@@ -15,12 +15,10 @@ export default function Hero() {
           Pretty <strong>UI</strong> is common,<br />
           thoughtful <strong>UX</strong> isn't
         </h1>
-        <p className={styles.subtitle}>
-          I bring <strong>both</strong> to the table
-        </p>
+
         <div className={styles.ctaRow}>
           <button className={styles.ctaPrimary} onClick={() => scrollTo('#work')}>
-            See my work
+            I bring both to the table
           </button>
           <button className={styles.ctaOutline} onClick={() => scrollTo('#contact')}>
             Get in touch
