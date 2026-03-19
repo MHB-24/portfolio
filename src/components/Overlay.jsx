@@ -115,36 +115,38 @@ const STUDIES = {
 };
 
 
-/* ── Autilent image layout — 4 images, single column ────────
-   1. Map Overview          [full width, light bg]
-   2. Live View             [dark blue card]
-   3. Rooted Beliefs        [dark blue card with 6-value grid]
-   4. Get Trip Reports      [dark blue card]
+/* ── Autilent image layout — 3 composite images ─────────────
+   1. Map Overview  (composite: ocean bg + map UI)
+   2. Live View     (composite: dark card + screen)
+   3. Get Trip Reports (composite: dark card + screen)
 ────────────────────────────────────────────────────────────── */
 const BELIEFS = [
-  { icon: 'atIconSafety',       name: 'Safety First, Always',        desc: "Safety is not just a feature; it's our foundation. We prioritize the well-being of drivers, passengers, and communities, ensuring every journey is secure." },
-  { icon: 'atIconInnovation',   name: 'Innovation with Purpose',     desc: 'We harness innovation to solve real-world challenges, driving every Autilent technological advance with a purpose to enhance road safety.' },
-  { icon: 'atIconUser',         name: 'User Empowerment',            desc: 'Autilent empowers fleet managers and drivers through a user-centric platform, ensuring a seamless and empowering experience.' },
-  { icon: 'atIconTransparency', name: 'Transparency and Integrity',  desc: 'We cultivate a culture of transparency and integrity, fostering trust internally and externally with clients, partners, and team members.' },
-  { icon: 'atIconImprovement',  name: 'Continuous Improvement',      desc: "We thrive on the belief that there's always room for improvement. Autilent evolves with the ever-changing landscape of technology and road safety." },
-  { icon: 'atIconCommunity',    name: 'Community Centric Approach',  desc: 'Our vision extends beyond individuals to actively contribute to a safer, more connected community through responsible road practices.' },
+  { name: 'Safety First, Always',       desc: "Safety is not just a feature; it's our foundation. We prioritize the well-being of drivers, passengers, and communities, ensuring every journey is secure." },
+  { name: 'Innovation with Purpose',    desc: 'We harness innovation to solve real-world challenges, driving every Autilent technological advance with a purpose to enhance road safety.' },
+  { name: 'User Empowerment',           desc: 'Autilent empowers fleet managers and drivers through a user-centric platform, ensuring a seamless and empowering experience.' },
+  { name: 'Transparency and Integrity', desc: 'We cultivate a culture of transparency and integrity, fostering trust internally and externally with clients, partners, and team members.' },
+  { name: 'Continuous Improvement',     desc: "We thrive on the belief that there's always room for improvement. Autilent evolves with the ever-changing landscape of technology and road safety." },
+  { name: 'Community Centric Approach', desc: 'Our vision extends beyond individuals to actively contribute to a safer, more connected community through responsible road practices.' },
 ];
 
 function AutilentImages() {
   return (
     <>
-      {/* 1 — Map Overview: ocean bg (image2173) + app UI (image2170) stacked */}
-      <div className={styles.atMapCard}>
-        <img className={styles.atMapBg}  src={ASSETS.atMapBg}       alt="" aria-hidden="true" />
-        <img className={styles.atMapApp} src={ASSETS.atMapOverview}  alt="Autilent – Map Overview" />
-      </div>
+      {/* 1 — Map Overview composite */}
+      <img
+        className={styles.ovImg}
+        style={{ height: 471 }}
+        src={ASSETS.atMapOverview}
+        alt="Autilent – Map Overview"
+      />
 
-      {/* 2 — Live View */}
-      <div className={styles.atDarkCard}>
-        <img className={styles.atLogo} src={ASSETS.atLogo} alt="" aria-hidden="true" />
-        <p className={styles.atCardLabel}>Live<br />View</p>
-        <img className={styles.atScreen} src={ASSETS.atLiveView} alt="Autilent – Live View" />
-      </div>
+      {/* 2 — Live View composite */}
+      <img
+        className={styles.ovImg}
+        style={{ height: 471 }}
+        src={ASSETS.atLiveView}
+        alt="Autilent – Live View"
+      />
 
       {/* 3 — Rooted Beliefs */}
       <div className={styles.atBeliefs}>
@@ -159,7 +161,6 @@ function AutilentImages() {
           <div className={styles.atBeliefGrid}>
             {BELIEFS.map(b => (
               <div key={b.name} className={styles.atBeliefCard}>
-                <img className={styles.atBeliefIcon} src={ASSETS[b.icon]} alt="" />
                 <p className={styles.atBeliefName}>{b.name}</p>
                 <p className={styles.atBeliefDesc}>{b.desc}</p>
               </div>
@@ -168,12 +169,13 @@ function AutilentImages() {
         </div>
       </div>
 
-      {/* 4 — Get Trip Reports */}
-      <div className={styles.atDarkCard}>
-        <img className={styles.atLogo} src={ASSETS.atLogo} alt="" aria-hidden="true" />
-        <p className={styles.atCardLabel}>Get Trip<br />Reports</p>
-        <img className={styles.atScreen} src={ASSETS.atGetTrip} alt="Autilent – Get Trip Reports" />
-      </div>
+      {/* 4 — Get Trip Reports composite */}
+      <img
+        className={styles.ovImg}
+        style={{ height: 471 }}
+        src={ASSETS.atGetTrip}
+        alt="Autilent – Get Trip Reports"
+      />
     </>
   );
 }
@@ -205,15 +207,13 @@ function BchexImages() {
         />
       </div>
 
-      {/* Row 3 — Mobile side-by-side */}
-      <div className={styles.imgRow}>
-        <div className={styles.imgDark}>
-          <img src={ASSETS.bxMobile1} alt="Bchex – Dispute Charges mobile" />
-        </div>
-        <div className={styles.imgMobile}>
-          <img src={ASSETS.bxMobile2} alt="Bchex – Review Roy Kent mobile" />
-        </div>
-      </div>
+      {/* Row 3 — Mobile side-by-side (combined composite image) */}
+      <img
+        className={styles.ovImg}
+        style={{ height: 471 }}
+        src={ASSETS.bxMobileRow}
+        alt="Bchex – Mobile screens"
+      />
 
       {/* Row 4 — Laptop: Dashboard */}
       <img
@@ -351,7 +351,9 @@ export default function Overlay({ activeId, onClose, onSwitch }) {
         {/* Close button — lives on the panel, not inside the scroll container */}
         {study && (
           <button className={styles.closeBtn} onClick={onClose} aria-label="Close">
-            <img src={ASSETS.closeIcon} alt="" />
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L17 17M17 1L1 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
           </button>
         )}
 
