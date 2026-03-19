@@ -3,7 +3,7 @@
 export const ASSETS = {
   // ── Hero ─────────────────────────────────────────────────────────
   heroIllustration: null,                          // removed (decorative only)
-  heroImage:        '/hero-photo.jpg',
+  heroImage:        '/hero-illustration.png',
 
   // ── Work section card thumbnails ─────────────────────────────────
   bchexCard:        '/figma-assets/bchex-card.png',
