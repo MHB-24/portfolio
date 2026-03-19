@@ -2,7 +2,7 @@
 .hero {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  overflow: visible;
   scroll-margin-top: 90px;
   display: flex;
   flex-direction: row;
@@ -113,13 +113,13 @@
   .hero {
     height: auto;
     min-height: unset;
-    padding: 80px 12px 0;
+    padding: 80px 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 24px;
     overflow: visible;
-    margin-bottom: 24px;   /* 24px vertical gap before Work section */
+    margin-bottom: 0;
   }
 
   /* Text group: title + subtitle stacked and centred */
@@ -129,6 +129,7 @@
     align-items: center;
     gap: 16px;
     width: 100%;
+    padding: 0 18px;
   }
 
   .title {
