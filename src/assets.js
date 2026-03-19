@@ -17,6 +17,8 @@ export const ASSETS = {
   designProcess:    '/figma-assets/design-process.png',
   stepLine1:        '/figma-assets/step-line-1.png',
   stepLine2:        '/figma-assets/step-line-2.png',
+  stepIndicator:        '/figma-assets/step-indicator.svg',
+  stepIndicatorMobile:  '/figma-assets/step-indicator-mobile.svg',
 
   // ── Contact icons ────────────────────────────────────────────────
   emailIcon:        '/figma-assets/email-icon.png',

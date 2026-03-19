@@ -44,14 +44,16 @@ export default function Experience() {
       <div className={styles.timeline}>
         <div className={styles.stepCol}>
           <img
-            src={ASSETS.stepLine1}
+            src={ASSETS.stepIndicator}
             alt=""
-            style={{ width: 13, height: 154, objectFit: 'contain' }}
+            className={styles.stepDesktop}
+            style={{ width: 50, height: 355, objectFit: 'contain' }}
           />
           <img
-            src={ASSETS.stepLine2}
+            src={ASSETS.stepIndicatorMobile}
             alt=""
-            style={{ width: 13, height: 144, objectFit: 'contain' }}
+            className={styles.stepMobile}
+            style={{ width: 50, height: 255, objectFit: 'contain' }}
           />
         </div>
         <div className={styles.expList}>

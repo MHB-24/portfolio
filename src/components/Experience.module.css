@@ -61,11 +61,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 10px 20px 10px 10px;
-  width: 118px;
+  padding: 0 20px 0 10px;
+  width: 80px;
   flex-shrink: 0;
 }
+
+.stepMobile { display: none; }
+.stepDesktop { display: block; }
 
 .expList {
   display: flex;
@@ -233,6 +235,9 @@
   .expList {
     gap: 32px;
   }
+
+  .stepDesktop { display: none; }
+  .stepMobile  { display: block; }
 
   .processLabel {
     position: static;

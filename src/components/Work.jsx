@@ -18,6 +18,7 @@ export const PROJECTS = [
     bg: 'var(--card-purple)',
     image: ASSETS.bchexCard,
     layout: 'full',
+    imgStyle: { borderRadius: 16 },
   },
   {
     id: 'autilent',
@@ -43,7 +44,7 @@ export const PROJECTS = [
     bg: 'var(--card-green)',
     image: ASSETS.xpendlessCard,
     layout: 'half',
-    imgStyle: { left: 308, top: 341, width: 330, height: 544 },
+    imgStyle: { left: 308, top: 341, width: 330, height: 544, borderRadius: 26 },
   },
 ];
 
@@ -80,7 +81,10 @@ export function ProjectCard({ project, onOpen, imgStyleOverride }) {
           top: resolvedStyle.top,
           width: resolvedStyle.width,
           height: resolvedStyle.height,
-        } : undefined}
+          borderRadius: resolvedStyle?.borderRadius,
+        } : {
+          borderRadius: resolvedStyle?.borderRadius,
+        }}
         src={image}
         alt={`${title} screenshot`}
       />
