@@ -5,6 +5,7 @@ import styles from './Work.module.css';
 export const PROJECTS = [
   {
     id: 'bchex',
+    hidden: true,
     title: 'Bchex',
     desc: (
       <>
@@ -93,8 +94,9 @@ export function ProjectCard({ project, onOpen, imgStyleOverride }) {
 }
 
 export default function Work({ onOpen }) {
-  const full = PROJECTS.find(p => p.layout === 'full');
-  const halves = PROJECTS.filter(p => p.layout === 'half');
+  const visible = PROJECTS.filter(p => !p.hidden);
+  const full = visible.find(p => p.layout === 'full');
+  const halves = visible.filter(p => p.layout === 'half');
 
   return (
     <section id="work" className={styles.work}>
@@ -103,7 +105,7 @@ export default function Work({ onOpen }) {
         <p className={styles.sectionSub}>Recent work</p>
       </div>
       <div className={styles.cards}>
-        <ProjectCard project={full} onOpen={onOpen} />
+        {full && <ProjectCard project={full} onOpen={onOpen} />}
         <div className={styles.row}>
           {halves.map(p => <ProjectCard key={p.id} project={p} onOpen={onOpen} />)}
         </div>
