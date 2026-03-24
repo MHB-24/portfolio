@@ -8,9 +8,9 @@ export default function Contact() {
     <section id="contact" className={styles.section}>
       {/* Static headline */}
       <div className={styles.ctaBlock}>
-        <span>Let make </span>
+        <span>Let's make </span>
         <br />
-        <span>somethings</span>
+        <span>something</span>
       </div>
 
       {/* Animated cycling word */}
