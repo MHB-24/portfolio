@@ -109,8 +109,8 @@ const STUDIES = {
       </>
     ),
     imagesCustom: true,
-    next: 'bchex',
-    nextBg: 'var(--card-purple)',
+    next: 'autilent',
+    nextBg: 'var(--card-blue)',
   },
 };
 
@@ -414,6 +414,7 @@ export default function Overlay({ activeId, onClose, onSwitch }) {
                     imgStyleOverride={
                       activeId === 'bchex'    ? { left: 721 } :
                       activeId === 'autilent' ? { left: 934 } :
+                      activeId === 'xpendless' && window.matchMedia('(min-width: 769px)').matches ? { left: 721 } :
                       undefined
                     }
                   />
