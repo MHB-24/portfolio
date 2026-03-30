@@ -100,6 +100,16 @@
 .ctaOutline:hover { background: #101010; color: #fafafa; }
 .ctaOutline:hover svg path { stroke: #fafafa; }
 
+/* ── 4K / large screens — prevent image from overlapping text ── */
+@media (min-height: 1200px) and (min-width: 1025px) {
+  .photo {
+    max-height: 900px;
+  }
+  .textGroup {
+    padding-right: 620px;
+  }
+}
+
 /* ── Tablet ── */
 @media (max-width: 1024px) {
   .hero  { padding: 60px 40px 0; gap: 40px; }
