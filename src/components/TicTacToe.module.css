@@ -1,0 +1,88 @@
+.wrap {
+  position: absolute;
+  right: 80px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #888;
+  letter-spacing: 0.02em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 72px);
+  grid-template-rows: repeat(3, 72px);
+  gap: 0;
+}
+
+.cell {
+  width: 72px;
+  height: 72px;
+  background: transparent;
+  border: none;
+  /* draw inner lines only using box-shadow / border on specific sides */
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  position: relative;
+}
+
+/* Right border for cells in col 1 & 2 */
+.cell:nth-child(3n+1),
+.cell:nth-child(3n+2) {
+  border-right: 3px solid #101010;
+}
+
+/* Bottom border for cells in row 1 & 2 */
+.cell:nth-child(-n+6) {
+  border-bottom: 3px solid #101010;
+}
+
+.cell:hover:not(.x):not(.o) {
+  background: rgba(0,0,0,0.03);
+}
+
+.x { color: #101010; }
+.o { color: #888; }
+
+.result {
+  font-family: 'Kaisei Tokumin', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--black);
+  margin-top: 4px;
+}
+
+.reset {
+  margin-top: 4px;
+  padding: 8px 28px;
+  background: #101010;
+  color: #fafafa;
+  border: none;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.reset:hover { opacity: 0.75; }
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+  .wrap { display: none; }
+}

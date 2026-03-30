@@ -63,6 +63,7 @@ export function ProjectCard({ project, onOpen, imgStyleOverride }) {
       tabIndex={0}
       aria-label={`Open ${title} case study`}
       onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && onOpen(id)}
+      {...(id === 'xpendless' ? { 'data-cursor': 'comment' } : id === 'autilent' ? { 'data-cursor': 'comment-autilent' } : {})}
     >
       <div className={styles.details}>
         <h3 className={styles.title}>{title}</h3>

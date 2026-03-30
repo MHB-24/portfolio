@@ -7,6 +7,7 @@ import Experience from './components/Experience';
 import About from './components/About';
 import Contact from './components/Contact';
 import Overlay from './components/Overlay';
+import CustomCursor from './components/CustomCursor';
 
 /* Pause / resume Lenis whenever the overlay is open */
 function LenisOverlaySync({ active }) {
@@ -26,6 +27,8 @@ export default function App() {
   const switchOverlay = useCallback(id => setActiveOverlay(id),   []);
 
   return (
+    <>
+    <CustomCursor />
     <ReactLenis
       root
       options={{
@@ -55,5 +58,6 @@ export default function App() {
         onSwitch={switchOverlay}
       />
     </ReactLenis>
+    </>
   );
 }

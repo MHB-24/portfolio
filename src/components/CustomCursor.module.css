@@ -1,0 +1,33 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+  /* offset so the tip of the cursor arrow is at the pointer */
+  margin-top: -2px;
+  margin-left: -2px;
+}
+
+.commentBubble {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 42px;
+  width: auto;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.commentBubbleVisible {
+  opacity: 1;
+}
+
+/* Hide on mobile / touch devices */
+@media (max-width: 768px) {
+  .cursor {
+    display: none;
+  }
+}

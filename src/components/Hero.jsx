@@ -32,6 +32,7 @@ export default function Hero() {
         className={styles.photo}
         src={ASSETS.heroImage}
         alt="Hadi Babar"
+        data-cursor="comment-hero"
       />
     </section>
   );

@@ -34,6 +34,13 @@ html.lenis body {
 
 html { scroll-behavior: auto; }
 
+/* Hide default cursor on desktop; keep it on touch/mobile */
+@media (min-width: 769px) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
 body {
   font-family: 'Geist', 'Inter', sans-serif;
   background: #fff;

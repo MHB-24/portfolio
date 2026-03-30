@@ -1,5 +1,6 @@
 import { ASSETS } from '../assets';
 import styles from './Contact.module.css';
+import ReactionGame from './ReactionGame';
 
 const WORDS = ['meaningful', 'impactful', 'interactive', 'profitable'];
 
@@ -38,6 +39,8 @@ export default function Contact() {
           Hadi Babar
         </a>
       </div>
+
+      <ReactionGame />
 
       <footer className={styles.footer}>
         <p>© 2026 Hadi Babar. UX that actually works.</p>
